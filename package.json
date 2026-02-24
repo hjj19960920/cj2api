@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "check": "node --check src/proxy.js && node --check src/worker.js && node --check api/index.js && node --check api/[...path].js && node --check netlify/functions/openai.js"
+    "check": "node --check src/proxy.js && node --check src/worker.js && node --check api/index.js && node --check api/health.js && node --check api/v1/models.js && node --check api/v1/chat/completions.js && node --check netlify/functions/openai.js"
   },
   "devDependencies": {
     "wrangler": "^4.52.0"

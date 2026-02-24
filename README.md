@@ -52,7 +52,9 @@ npx wrangler deploy
 
 已提供：
 
-- Edge 入口：`api/[...path].js`
+- Edge 入口：`api/v1/chat/completions.js`
+- Edge 入口：`api/v1/models.js`
+- Edge 入口：`api/health.js`
 - 根路径入口：`api/index.js`
 - 路由重写：`vercel.json`
 
