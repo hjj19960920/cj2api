@@ -4,7 +4,8 @@ const DEFAULT_TOP_K = 8;
 
 export async function handleProxyRequest(request, env = {}, forcedPathname = null) {
   const url = new URL(request.url);
-  const pathname = normalizePath(forcedPathname || url.pathname);
+  const rawPathname = normalizePath(forcedPathname || url.pathname);
+  const pathname = normalizePath(mapAliasPath(rawPathname));
 
   if (request.method === "OPTIONS") {
     return new Response(null, {
@@ -36,6 +37,16 @@ export async function handleProxyRequest(request, env = {}, forcedPathname = nul
   }
 
   return openaiError("Not found", 404, env, "invalid_request_error", "not_found");
+}
+
+function mapAliasPath(pathname) {
+  const aliases = {
+    "/api": "/",
+    "/api/health": "/health",
+    "/api/v1-models": "/v1/models",
+    "/api/v1-chat-completions": "/v1/chat/completions",
+  };
+  return aliases[pathname] || pathname;
 }
 
 function normalizePath(pathname) {
