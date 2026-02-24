@@ -1,0 +1,6 @@
+name = "chatjimmy2api"
+main = "src/worker.js"
+compatibility_date = "2026-02-24"
+
+[observability]
+enabled = true
