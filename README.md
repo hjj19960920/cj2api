@@ -1,4 +1,4 @@
-# chatjimmy2api
+# ChatJimmy2API 一键部署
 
 把 `https://chatjimmy.ai/api/chat` 包装成 OpenAI 兼容接口，可部署到：
 
