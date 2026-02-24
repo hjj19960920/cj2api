@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "cloudflare": {
+    "bindings": {
+      "OPENAI_API_KEY": {
+        "type": "secret_text",
+        "description": "Bearer token clients must send in Authorization header."
+      }
+    }
+  },
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",

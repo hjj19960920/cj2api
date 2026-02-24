@@ -1,6 +1,9 @@
 [build]
 functions = "netlify/functions"
 
+[template.environment]
+OPENAI_API_KEY = "Set the Bearer token required by clients."
+
 [[redirects]]
 from = "/v1/*"
 to = "/.netlify/functions/openai/v1/:splat"

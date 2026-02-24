@@ -19,10 +19,12 @@
 ## 一键部署按钮
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api&env=OPENAI_API_KEY,CHATJIMMY_URL,CHATJIMMY_MODEL,CHATJIMMY_TOP_K,CHATJIMMY_MODELS,ALLOWED_ORIGIN)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api&env=OPENAI_API_KEY&envDescription=Enter%20the%20API%20key%20clients%20must%20send%20as%20Bearer%20token.)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api#OPENAI_API_KEY=)
 
-一键部署后建议至少检查这项环境变量：
+以上三家都按“只要求 `OPENAI_API_KEY`”配置。
+
+一键部署后请确认这项环境变量：
 
 - `OPENAI_API_KEY`（建议必填，避免接口裸奔）
 
