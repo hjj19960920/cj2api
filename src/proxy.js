@@ -2,9 +2,9 @@ const CHATJIMMY_DEFAULT_URL = "https://chatjimmy.ai/api/chat";
 const DEFAULT_MODEL = "llama3.1-8B";
 const DEFAULT_TOP_K = 8;
 
-export async function handleProxyRequest(request, env = {}) {
+export async function handleProxyRequest(request, env = {}, forcedPathname = null) {
   const url = new URL(request.url);
-  const pathname = normalizePath(url.pathname);
+  const pathname = normalizePath(forcedPathname || url.pathname);
 
   if (request.method === "OPTIONS") {
     return new Response(null, {

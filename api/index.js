@@ -5,7 +5,5 @@ export const config = {
 };
 
 export default async function handler(request) {
-  const url = new URL(request.url);
-  url.pathname = "/";
-  return handleProxyRequest(new Request(url.toString(), request), process.env);
+  return handleProxyRequest(request, process.env, "/");
 }
